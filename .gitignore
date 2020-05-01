@@ -1,0 +1,5 @@
+build_debug/
+build_release/
+ccls_precomp/
+template.scad
+compile_commands.json
