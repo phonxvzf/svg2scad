@@ -7,8 +7,8 @@ A simple program to generate OpenSCAD model from an SVG image.
 
 ## Building
 ```shell
-cmake .
-make
+$ cmake .
+$ make
 ```
 
 ## Running
