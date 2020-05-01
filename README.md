@@ -1,6 +1,9 @@
 # svg2scad
 A simple program to generate OpenSCAD model from an SVG image.
 
+![gnu.svg](https://raw.githubusercontent.com/phonxvzf/svg2scad/master/gnu.svg)
+![gnu.scad](https://raw.githubusercontent.com/phonxvzf/svg2scad/master/gnuscad.png)
+
 ## Prerequisites
 - C++14 compliant compiler
 - CMake
