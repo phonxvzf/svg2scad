@@ -16,7 +16,7 @@ const std::string SCAD_PREAMBLE = "function svg_distance(p0,p1)=sqrt((p0.x-p1.x)
 
 const std::string SCAD_MODULE_DRAW_LINE = "module svg_line(p0,p1,thickness,depth){size=svg_distance(p0,p1);angle=atan2(p1.y-p0.y,p1.x-p0.x);translate(p0){rotate(angle,[0,0,1]){translate([0,-0.5*thickness,0]){scale([size,thickness,depth]){cube([1,1,1]);}}}}}";
 
-const std::string SCAD_MODULE_DRAW_VERTICES = "module svg_curve(vertices,thickness,depth){extent=0.5*thickness;n_segments=len(vertices)-1;union(){for(i=[0:n_segments-1]){p=vertices[max(0,i-1)];p0=vertices[i];p1=vertices[i+1];tangent0=p0-p;tangent1=p1-p0;normal0=svg_normalize([tangent0.y,-tangent0.x]);normal1=svg_normalize([tangent1.y,-tangent1.x]);fpr0=p0+extent*normal0;fpr1=p0+extent*normal1;fpl0=p0-extent*normal0;fpl1=p0-extent*normal1;svg_line(p0,p1,thickness,depth);color([1,0,0])translate([0,0,0.5*depth])scale([1,1,depth])polygon([p0,fpr0,fpr1]);color([0,1,0])translate([0,0,0.5*depth])scale([1,1,depth])polygon([p0,fpl0,fpl1]);}}}";
+const std::string SCAD_MODULE_DRAW_VERTICES = "module svg_curve(vertices,thickness,depth){extent=0.5*thickness;n_segments=len(vertices)-1;union(){for(i=[0:n_segments-1]){p=vertices[max(0,i-1)];p0=vertices[i];p1=vertices[i+1];tangent0=p0-p;tangent1=p1-p0;normal0=svg_normalize([tangent0.y,-tangent0.x]);normal1=svg_normalize([tangent1.y,-tangent1.x]);fpr0=p0+extent*normal0;fpr1=p0+extent*normal1;fpl0=p0-extent*normal0;fpl1=p0-extent*normal1;svg_line(p0,p1,thickness,depth);color([1,0,0])linear_extrude(depth)polygon([p0,fpr0,fpr1]);color([0,1,0])linear_extrude(depth)polygon([p0,fpl0,fpl1]);}}}";
 
 using namespace math;
 
