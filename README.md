@@ -6,6 +6,7 @@ A simple program to generate OpenSCAD model from an SVG image.
 
 ## Prerequisites
 - C++14 compliant compiler
+- Boost library
 - CMake
 
 ## Building
